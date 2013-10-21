@@ -9,7 +9,6 @@
 
 	<!-- inject property file into String context -->
 	<context:property-placeholder location="classpath:spring_db.properties" />
-	<context:property-placeholder location="classpath:spring_db2.properties" />
 	
 	<!-- Create two different data sources -->
 	<bean id="dataSourceA" class="com.atomikos.jdbc.AtomikosDataSourceBean"
@@ -20,7 +19,7 @@
 		</property>
 		<property name="xaProperties">
 			<props>
-				<prop key="databaseName">${jdbc.mysql.url}</prop>
+				<prop key="databaseName">${jdbc.mysql.dbname1}</prop>
 				<prop key="user">${jdbc.mysql.username}</prop>
 				<prop key="password">${jdbc.mysql.password}</prop>
 			</props>
@@ -36,7 +35,7 @@
 		</property>
 		<property name="xaProperties">
 			<props>
-				<prop key="databaseName">${jdbc.mysql.url2}</prop>
+				<prop key="databaseName">${jdbc.mysql.dbname2}</prop>
 				<prop key="user">${jdbc.mysql.username2}</prop>
 				<prop key="password">${jdbc.mysql.password2}</prop>
 			</props>
