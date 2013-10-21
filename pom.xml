@@ -115,6 +115,23 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		
+		<!-- For second part for use JTA and Atomikos -->
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-jdbc</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-hibernate3</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+		<!-- dependency>
+			<groupId></groupId>
+			<artifactId></artifactId>
+			<version></version>
+		</dependency-->
 	</dependencies>
 	<build>
 		<finalName>spring-tx</finalName>

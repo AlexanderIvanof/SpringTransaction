@@ -7,6 +7,7 @@ import javax.swing.event.ListSelectionEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alex.spring.entity.Contact;
@@ -40,9 +41,9 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
+	@Transactional(readOnly = true, propagation = Propagation.NEVER)
 	public long countAllRows() {
-		// TODO Auto-generated method stub
-		return 0;
+		return contactRepository.countAll();
 	}
 
 }
